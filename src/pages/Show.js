@@ -4,14 +4,16 @@ import React, { useEffect, useState } from "react";
 function Show (props) {
     const id = props.match.params.id
     const people = props.people
-    const person = people.find(p => p.id === id )
+    const person = people.find(p => p._id === id )
+    
 
     //state for form
 
     const [ editForm, setEditForm] = useState(person);
   // handleChange function for form
   const handleChange = event => {
-    setEditForm({ ...editForm, [event.target.name]: event.target.value });
+    setEditForm({ ...editForm, [
+      event.target.name]: event.target.value });
   }
     
    // handlesubmit for form

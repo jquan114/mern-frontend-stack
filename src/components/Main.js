@@ -41,7 +41,7 @@ function Main(props) {
     // update list of people
     getPeople();
   }
-  const deletePeople = async id => {
+  const deletePeople = async (id )=> {
     // make delete request to create people
     await fetch(URL + id, {
       method: "DELETE",
@@ -49,7 +49,7 @@ function Main(props) {
     // update list of people
     getPeople();
   }
-  useEffect(() => getPeople(), []);
+  useEffect(() => {getPeople()}, []);
 
   return (
     <main>
